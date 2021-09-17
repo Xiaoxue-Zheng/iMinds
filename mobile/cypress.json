@@ -1,0 +1,6 @@
+{
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "testFiles": "**/*.{feature,features}",
+  "baseUrl": "http://localhost:8080",
+  "retries": 1
+}
