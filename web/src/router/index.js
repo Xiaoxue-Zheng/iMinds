@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Participant from '../views/Participant.vue';
 import SignIn from '../views/SignIn.vue';
-import { StoreService } from '@/services/store.service';
+//import { StoreService } from '@/services/store.service';
 
 const routes = [
   {
