@@ -34,7 +34,6 @@ To run all tests:
 ```
 mvnw verify
 ```
-```
 
 ## Mobile Application (for participants)
 
