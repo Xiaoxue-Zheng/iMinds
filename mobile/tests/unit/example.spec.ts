@@ -1,20 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Folder from '@/views/Folder.vue'
+import Tab1 from '@/views/Tab1.vue'
 
-describe('Folder.vue', () => {
-  it('renders folder view', () => {
-    const mockRoute = {
-      params: {
-        id: 'Outbox'
-      }
-    }
-    const wrapper = mount(Folder, {
-      global: {
-        mocks: {
-          $route: mockRoute
-        }
-      }
-    })
-    expect(wrapper.text()).toMatch('Explore UI Components')
+describe('Tab1.vue', () => {
+  it('renders tab 1 view', () => {
+    const wrapper = mount(Tab1)
+    expect(wrapper.text()).toMatch('Tab 1 page')
   })
 })
