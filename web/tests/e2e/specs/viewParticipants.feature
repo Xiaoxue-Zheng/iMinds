@@ -5,7 +5,9 @@ Scenario: View participant summary
     When The researcher logs in to the web interface
     Then They will see a "summary view" of existing participants
     And The view shall be ordered by participant id.
-    And For each participant the view shall include participant id, unique code and a link (e.g. button) to view data
+    And For each participant the view shall include participant id
+    And For each participant the view shall include unique code
+    And For each participant the view shall include a button named "view details" to view data
 
 Scenario: View participant details
     Given The researcher is viewing the participant summary page

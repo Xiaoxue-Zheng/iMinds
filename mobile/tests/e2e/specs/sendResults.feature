@@ -6,5 +6,4 @@ Scenario: Send data on questionnaire completion
     When The questions are complete
     Then A message will be displayed to the user to thank them for completing the questions
     And The app shall send the data to the server, along with the unique code
-    And The server will store received data for the correct participant
-    And The unique code will be used to identify the correct participant
+    And The server will store received data for the correct participant identified by the unique code
