@@ -6,5 +6,6 @@ Scenario: Setup participant on server
     When They select the "Add participant" option
     Then They will be able to enter participant details
     And The details shall include a participant id and a unique code
+    And The researcher can click a button "Save"
     And The researcher will see a message to confirm that the account has been created
 
