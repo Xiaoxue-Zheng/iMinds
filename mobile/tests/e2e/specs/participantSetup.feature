@@ -14,6 +14,6 @@ Scenario: No unique code generated on subsequent app opening
 
 Scenario: Reminder of unique code
     Given The app has previously been opened
-    When The "unique code" menu item is selected
+    When The "My Code" menu item is selected
     Then The existing unique code is displayed on the screen
     And The code stays on screen until dismissed

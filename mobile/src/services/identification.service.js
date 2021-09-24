@@ -7,16 +7,19 @@ export default {
 
   async getUniqueCode() {
     let code = await StorageService.get(UNIQUE_CODE_KEY)
-    console.log(code)
     return code;
   },
 
   async generateAndStoreUniqueCode() {
-    let uniqueCode = await ApiService.post('/unique-codes', {'deviceId': '', 'appType':'IOS'})
-    console.log(uniqueCode)
-    StorageService.set(UNIQUE_CODE_KEY, uniqueCode.data)
-    return uniqueCode
+    return new Promise((resolve) => 
+    {
+      ApiService.post('/unique-codes', {'deviceId': '', 'appType':'IOS'})
+      .then((res)=>  {
+        StorageService.set(UNIQUE_CODE_KEY, res.data)
+        resolve(res)
+      }).catch(() => {
+        resolve('ERROR')
+      })
+    })
   },
-
-
 }

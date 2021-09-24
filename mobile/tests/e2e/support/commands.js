@@ -23,3 +23,25 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('clearStorage', () => {
+  return new Promise((resolve) => {
+      var request = indexedDB.deleteDatabase('_imindsapp');
+      request.onsuccess = function () {
+          resolve('success')
+      };
+      request.onerror = function () {
+          resolve('error')
+      };
+      request.onblocked = function () {
+          resolve('blocked')
+      };
+  })
+})
+
+Cypress.Commands.add('shouldBeCalled', (alias, timesCalled) => {
+  expect(
+    cy.state('requests').filter(call => call.alias === alias),
+    `${alias} should have been called ${timesCalled} times`
+  ).to.have.length(timesCalled);
+});

@@ -5,9 +5,9 @@
       <ion-button slot="end"  @click="closeModal">Close</ion-button>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
+  <ion-content class="ion-padding" id="unique-code-display">
           <!-- <div class="ion-text-center"> -->
-    <ion-text color="primary" ><h1>{{ uniqueCode }}</h1></ion-text>
+    <ion-text color="primary" id="unique-code"><h1>{{ uniqueCode }}</h1></ion-text>
           <!-- </div> -->
     <span> Please share it with your researcher.</span>
   </ion-content>

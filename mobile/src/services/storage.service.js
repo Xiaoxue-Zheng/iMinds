@@ -1,8 +1,6 @@
 import LocalForage from 'localforage';
 import CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
-
-
 export default {
 
   dbPromise: null,
