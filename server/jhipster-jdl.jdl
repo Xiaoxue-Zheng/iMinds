@@ -1,0 +1,27 @@
+entity UniqueCode {
+	code String unique required
+    deviceId String
+    appType AppType required
+    status UniqueCodeStatus required
+  	createTime Instant required
+}
+
+entity Participant {
+	participantId String unique required
+}
+
+relationship OneToOne {
+    Participant{uniqueCode required} to UniqueCode
+}
+
+enum UniqueCodeStatus {
+	NEW
+    ACTIVATED
+}
+
+enum AppType {
+	ANDROID
+    IOS
+    OTHER
+}
+ 

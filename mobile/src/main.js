@@ -2,7 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 
-import { IonicVue } from '@ionic/vue';
+import { IonicVue, modalController } from '@ionic/vue';
+import ApiService from '@/services/api.service.js';
+import StorageService from '@/services/storage.service.js';
+import IdentificationService from "@/services/identification.service";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -22,11 +25,23 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import UniqueCodeModal from "./components/UniqueCodeModal.vue";
 
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
-  
-router.isReady().then(() => {
+ 
+ApiService.init();
+
+router.isReady().then(async () => {
+  await StorageService.initialise();
+  let uniqueCode = await IdentificationService.getUniqueCode()
+  if (!uniqueCode){
+    await IdentificationService.generateAndStoreUniqueCode()
+    const modal = await modalController.create({
+      component: UniqueCodeModal, 
+    });
+    modal.present();
+  }
   app.mount('#app');
 });

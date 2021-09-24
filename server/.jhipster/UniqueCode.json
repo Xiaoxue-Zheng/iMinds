@@ -1,0 +1,42 @@
+{
+  "name": "UniqueCode",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique", "required"]
+    },
+    {
+      "fieldName": "deviceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "appType",
+      "fieldType": "AppType",
+      "fieldValues": "ANDROID,IOS,OTHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "UniqueCodeStatus",
+      "fieldValues": "NEW,ACTIVATED",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "unique_code",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210923154858"
+}

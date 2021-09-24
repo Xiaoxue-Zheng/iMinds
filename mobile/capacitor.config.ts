@@ -4,7 +4,7 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'iMinds',
   webDir: 'dist',
-  bundledWebRuntime: false
+  bundledWebRuntime: true
 };
 
 export default config;
