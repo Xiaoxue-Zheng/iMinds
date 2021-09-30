@@ -1,4 +1,3 @@
-import Purecss from 'purecss-sass'
 
 import { createApp } from "vue";
 import App from "./App.vue";
